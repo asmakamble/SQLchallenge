@@ -13,7 +13,7 @@ For more information or to participate: SQL Calendar
 /Medium: 
 /Hard: 
 
-README.md: This documentation.
+**README.md: This documentation.**
 💡 **Features**
 Unlimited Attempts: Each question has unlimited tries for experimentation.
 Gradual Difficulty: Progressively challenging queries to match skill improvement.
