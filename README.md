@@ -27,5 +27,7 @@ Compatible with databases such as PostgreSQL, MySQL, or SQL Server.
 **Follow instruction to add/commit changes**
 
 $ git remote add origin https://github.com/asmakamble/SQLchallenge.git
+
 $ git branch -M main
+
 $ git push -u origin main
