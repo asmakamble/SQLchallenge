@@ -43,7 +43,7 @@ resort_id 	snowfall_inches
 3		75
 4		55
 Question level of difficulty:Medium
-Answer:
+Answer 4:
 
 select region,
         avg(snowfall_inches) as average_snowfall

@@ -101,6 +101,7 @@ Frozen Slopes		Alaska		75
 
 Question level of difficulty:Easy
 
+answer:
 select resort_name, snowfall_inches
 from snowfall
 where snowfall_inches > 50;
