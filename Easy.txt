@@ -1,0 +1,167 @@
+
+#Day2
+
+Santa wants to know which gifts weigh more than 1 kg. Can you list them?
+
+Table name: gifts
+
+gift_name	recipient	weight_kg
+Toy Train	John		2.5
+Chocolate Box	Alice		0.8
+Teddy Bear	Sophia		1.2
+Board Game	Liam		0.9
+
+Question level of difficulty:Easy
+
+Answer: 
+select gifts.gift_name, gifts.weight_kg
+from gifts
+where gifts.weight_kg>1;
+
+---------------------------------------------------------------------------
+#Day5
+
+This year, we're celebrating Christmas in the Southern Hemisphere! Which beaches are expected to have temperatures above 30°C on Christmas Day?
+
+Table name: beach_temperature_predictions
+
+beach_name		country		expected_temperature_c	date
+Bondi Beach		Australia	32		2024-12-24
+Copacabana Beach	Brazil		28		2024-12-24
+Clifton Beach		South Africa	31		2024-12-25
+Brighton Beach		New Zealand	25		2024-12-25
+
+Question level of difficulty:Easy
+
+Answer: 
+
+select beach_name,
+     expected_temperature_c 
+from beach_temperature_predictions
+where expected_temperature_c > 30 and date = '2024-12-25';
+
+------------------------------------------------------------------------
+#Day 8
+
+You are managing inventory in Santa's workshop. Which gifts are meant for "good" recipients? List the gift name and its weight.
+
+Table name: gifts
+
+gift_id		gift_name	recipient_type	weight_kg
+1		Toy Train	good		2.5
+2		Lumps of Coal	naughty		1.5
+3		Teddy Bear	good		1.2
+4		Chocolate Bar	good		0.3
+5		Board Game	naughty		1.8
+Question level of difficulty:Easy
+
+Answer: 
+
+select gifts.gift_name, gifts.weight_kg
+from gifts
+where recipient_type = 'good';
+
+---------------------------------------------------------------------------
+
+#Day 11
+
+You are preparing holiday gifts for your family. Who in the family_members table are celebrating their birthdays in December 2024? List their name and birthday.
+
+Table name: family_members
+
+member_id	name	relationship	birthday
+1		Dawn	Sister		2024-12-24
+2		Bob	Father		2024-05-20
+3		Charlie	Brother		2024-12-25
+4		Diana	Mother		2024-03-15
+
+Question level of difficulty:Easy
+
+Answer:
+select 
+    name, 
+    birthday
+from 
+    family_members
+where 
+    strftime('%m', birthday) = '12'
+    and strftime('%Y',birthday) = '2024';
+
+---------------------------------------------------------------------------------
+
+#Day14
+Which ski resorts had snowfall greater than 50 inches?
+
+Table name: snowfall
+
+resort_name		location	snowfall_inches
+Snowy Peaks		Colorado	60
+Winter Wonderland	Utah		45
+Frozen Slopes		Alaska		75
+
+Question level of difficulty:Easy
+
+select resort_name, snowfall_inches
+from snowfall
+where snowfall_inches > 50;
+
+
+-------------------------------------------------------------------------------------
+
+#Day 17
+
+The Grinch is planning out his pranks for this holiday season. Which pranks have a difficulty level of “Advanced” or “Expert"? List the prank name and location (both in descending order).
+
+Table name: grinch_pranks
+
+prank_id	prank_name		location		difficulty
+1		Stealing Stockings	Whoville		Beginner
+2		Christmas Tree Topple	Whoville Town Square	Advanced
+3		Present Swap		Cindy Lous House	Beginner
+4		Sleigh Sabotage		Mount Crumpit		Expert
+5		Chimney Block		Mayors Mansion		Expert
+
+Question level of difficulty:Easy
+
+Answer: 
+
+SELECT prank_name, location
+FROM grinch_pranks
+WHERE difficulty IN ('Advanced', 'Expert')
+ORDER BY location DESC, prank_name DESC;
+
+------------------------------------------------------------------------------------
+
+#Day 20
+
+We are looking for cheap gifts at the market. Which vendors are selling items priced below $10? List the unique (i.e. remove duplicates) vendor names.
+
+Table name: vendors
+
+vendor_id	vendor_name	market_location
+1		Cozy Crafts	Downtown Square
+2		Sweet Treats	Central Park
+3		Winter Warmers	Downtown Square
+
+Table name: item_prices
+
+item_id	vendor_id	item_name		price_usd
+1	1		Knitted Scarf		25
+2	2		Hot Chocolate		5
+3	2		Gingerbread Cookie	3.5
+4	3		Wool Hat		18
+5	3		Santa Pin		2
+
+Question level of difficulty:Easy
+
+Answer: 
+
+select vendor_name
+from vendors
+left join item_prices on vendors.vendor_id = item_prices.vendor_id
+where price_usd < 10
+group by vendor_name;
+
+
+--------------------------------------------------------------------------
+
