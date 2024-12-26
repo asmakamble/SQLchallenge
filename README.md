@@ -14,9 +14,11 @@ For more information or to participate: SQL Calendar
 /Hard: 
 
 **README.md: This documentation.**
+
 💡 **Features**
 Unlimited Attempts: Each question has unlimited tries for experimentation.
 Gradual Difficulty: Progressively challenging queries to match skill improvement.
+
 🛠️ **Technologies Used**
 SQL
 Compatible with databases such as PostgreSQL, MySQL, or SQL Server.
