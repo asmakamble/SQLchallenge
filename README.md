@@ -1,4 +1,5 @@
 **SQL Advent Calendar Challenge 2024**
+
 📅 **Challenge Overview**
 This repository contains my solutions to the SQL Advent Calendar Challenge held in December 2024. The challenge offers 24 SQL questions, ranging from beginner to advanced levels, to improve SQL skills and explore various query-writing techniques.
 
